@@ -1,13 +1,16 @@
 <?xml version  = "1.0" encoding="UTF-8"?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.GridPane?>
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.layout.Pane?>
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-    <Label fx:id="texto">ola</Label>
-   <TextFlow > ola </TextFlow>
-  <TextField id=" envie"> </TextField>
-    <Button fx:id="butao">teste</Button>
-</GridPane>
+    <padding> <Insets top="25" right="25" bottom="10" left="25"/>  </padding>
+
+    <Label fx:id="Titulo" text="Chat" GridPane.rowIndex="0" GridPane.columnIndex="1" alignment="center"/>
+    <TextArea fx:id="textChat" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <TextField fx:id="Message" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-font-style: oblique"/>
+    <Button fx:id="enviar" GridPane.columnIndex="2" GridPane.rowIndex="2" onAction="#Send" text="Enviar" />
+
+ </GridPane>

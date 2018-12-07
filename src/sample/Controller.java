@@ -3,6 +3,8 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,8 +13,18 @@ import java.net.UnknownHostException;
 
 public class Controller {
 
-    Socket cliente;
-    PrintWriter msg;
+   private  Socket cliente;
+   private PrintWriter msg;
+
+   @FXML
+   private TextField Message;
+
+   @FXML
+   private TextArea textChat;
+
+   @FXML
+   private Button enviar;
+
 
 
         public Controller() {
@@ -30,6 +42,13 @@ public class Controller {
 
 
 
+    }
+
+    @FXML
+    private void Send(){
+            this.msg.println(this.Message.getText());
+            this.textChat.appendText("Usuario: " + this.Message.getText() + "\n");
+            this.Message.setText("");
     }
 
 
