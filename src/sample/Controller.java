@@ -70,7 +70,8 @@ public class Controller {
     }
 
     public void recebido(String msg){
-       textChat.appendText(msg + "\n");
+       textChat.appendText(this.cliente.getInetAddress().getHostName()
+       + ": " + msg + "\n");
     }
 
     @FXML
